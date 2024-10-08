@@ -37,8 +37,11 @@ export class SearchService {
     }
 
     public search(query: string) {
+        // Pembersihan karakter non-alfanumerik pada query
+        const cleanedQuery = query.replace(/[^a-zA-Z0-9 ]/g, "").toLowerCase();
+
         // Tokenisasi query
-        const tokenizedQuery = query.split(' ');
+        const tokenizedQuery = cleanedQuery.split(' ');
 
         // Filtering stopword pada query
         const filteredQuery = stopword.removeStopwords(tokenizedQuery);

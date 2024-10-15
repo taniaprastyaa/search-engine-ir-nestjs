@@ -29,7 +29,7 @@ export class SearchService {
           const stemmedAuthor = filteredAuthor.map(word => this.stemmer.stem(word)).join(' ');
           const stemmedContent = filteredContent.map(word => this.stemmer.stem(word)).join(' ');
 
-          return `${stemmedTitle} ${stemmedAuthor} ${stemmedContent} ${blog.date}`;
+          return `${stemmedTitle} ${stemmedAuthor} ${stemmedContent}`;
       });
 
       // Membuat corpus TF-IDF dari data yang sudah diproses
